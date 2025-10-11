@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 3, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
-    {"offset": {"line": 15, "column": 0}, "map": {"version":3,"sources":["file:///Users/leehyejin/Desktop/MyProfile/src/app/page.tsx"],"sourcesContent":["export default function Home() {\n  return <main className=\"border border-white-500 flex flex-1\">\n    <h1 className=\"text-white-600\">Hye Jin's Port Folio !</h1>\n  </main>;\n}\n"],"names":[],"mappings":";;;;;;AAAe,SAAS;IACtB,qBAAO,8OAAC;QAAK,WAAU;kBACrB,cAAA,8OAAC;YAAG,WAAU;sBAAiB;;;;;;;;;;;AAEnC","debugId":null}}]
-}

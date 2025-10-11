@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/src/components/Header.module.css"],"sourcesContent":[".gnb {\n position: relative;\n flex: 1;\n margin: 5px;\n}\n.text {\n font-weight: 600;\n font-size: 18px;\n}\n.masker {\n position: absolute;\n bottom: 0;\n left: 0;\n right: 0;\n height: 30%;\n background-color: rgb(255, 255, 255, 0.8);\n color: #000;\n font-weight: 600;\n font-size: 18px;\n overflow: hidden;\n transition: 0.4s;\n}\n\n.masker > span {\n position: absolute;\n bottom: 0;\n left: 0;\n right: 0;\n}\n\n.gnb:hover .masker {\n height: 100%;\n}\n"],"names":[],"mappings":"AAAA;;;;;;AAKA;;;;;AAIA;;;;;;;;;;;;;;AAcA;;;;;;;AAOA"}}]
-}
