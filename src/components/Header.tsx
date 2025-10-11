@@ -11,8 +11,8 @@ const MenuConfig = [
 const Header = () => {
  return (
   <div className=" p-1">
-   <header className="flex ">
-    <div className="flex-1">Hye Jins's Port Folio</div>
+   <header className="flex  items-center ">
+    <div className="flex-1 text-lg font-semibold">Hye Jin's Port Folio</div>
     <nav className="flex-2">
      <ul className="flex justify-between">
       {MenuConfig.map((menu) => (
