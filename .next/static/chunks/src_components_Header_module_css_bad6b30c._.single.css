@@ -1,0 +1,38 @@
+/* [project]/src/components/Header.module.css [app-client] (css) */
+.Header-module__hBw1pG__gnb {
+  flex: 1;
+  margin: 5px;
+  position: relative;
+}
+
+.Header-module__hBw1pG__text {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.Header-module__hBw1pG__masker {
+  color: #000;
+  background-color: rgba(255, 255, 255, .8);
+  height: 30%;
+  font-size: 18px;
+  font-weight: 600;
+  transition: all .4s;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+.Header-module__hBw1pG__masker > span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.Header-module__hBw1pG__gnb:hover .Header-module__hBw1pG__masker {
+  height: 100%;
+}
+
+/*# sourceMappingURL=src_components_Header_module_css_bad6b30c._.single.css.map*/

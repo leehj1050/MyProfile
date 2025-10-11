@@ -1,0 +1,33 @@
+.gnb {
+ position: relative;
+ flex: 1;
+ margin: 5px;
+}
+.text {
+ font-weight: 600;
+ font-size: 18px;
+}
+.masker {
+ position: absolute;
+ bottom: 0;
+ left: 0;
+ right: 0;
+ height: 30%;
+ background-color: rgb(255, 255, 255, 0.8);
+ color: #000;
+ font-weight: 600;
+ font-size: 18px;
+ overflow: hidden;
+ transition: 0.4s;
+}
+
+.masker > span {
+ position: absolute;
+ bottom: 0;
+ left: 0;
+ right: 0;
+}
+
+.gnb:hover .masker {
+ height: 100%;
+}
