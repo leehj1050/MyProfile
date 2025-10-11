@@ -2,7 +2,7 @@
 /node_modules
 
 # build output
-.next
+.next/
 out
 dist
 
@@ -19,3 +19,4 @@ npm-debug.log*
 
 # system files
 .DS_Store
+``
