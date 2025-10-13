@@ -3,7 +3,7 @@ import styles from "./Header.module.css";
 import Link from "next/link";
 
 const MenuConfig = [
- { title: "Info", key: "menu_1" , hrefId:"#info"},
+ { title: "About", key: "menu_1" , hrefId:"#about"},
  { title: "Career", key: "menu_2" ,hrefId:"#career" },
  { title: "Projects", key: "menu_3", hrefId:"#projects" },
  { title: "Contact", key: "menu_4" , hrefId:"#contact"},
