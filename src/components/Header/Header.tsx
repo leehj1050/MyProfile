@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./Header.module.css";
 import Link from "next/link";
 
 const MenuConfig = [
@@ -11,7 +10,7 @@ const MenuConfig = [
 
 const Header = () => {
   return (
-    <div className="p-2 px-[6vw] fixed w-full shadow-md bg-white">
+    <div className="p-2 px-[6vw] fixed w-full shadow-md bg-white z-10">
       <header className="flex  items-center ">
         <div className="flex-1 text-lg font-semibold cursor-pointer">Hye Jin's Port Folio</div>
         <nav className="flex-2">
