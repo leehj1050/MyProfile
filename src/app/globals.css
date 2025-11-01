@@ -33,7 +33,6 @@
 
 html {
   height: 100vh;
-  scroll-behavior: smooth;
 }
 
 body {
@@ -47,7 +46,7 @@ button {
   cursor: pointer;
 }
 
-section{
-  padding: 6vw;
-  padding-top: 7.5vw;
+
+main{
+  padding: 2vw;
 }

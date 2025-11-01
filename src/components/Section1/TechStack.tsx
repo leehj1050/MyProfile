@@ -6,7 +6,7 @@ import { SiTypescript } from "react-icons/si";
 
 export const TechStack = () => {
     return (
-        <ul className="flex flex-1 gap-1 items-center justify-between text-4xl [@media(max-width:600px)]:text-2xl">
+        <ul className="flex flex-1 gap-2 items-center text-4xl [@media(max-width:600px)]:text-2xl">
             <li className="text-orange-600"><FaHtml5 /></li>
             <li className="text-blue-600"><FaCss3Alt /></li>
             <li className="text-teal-600"><RiTailwindCssFill /></li>

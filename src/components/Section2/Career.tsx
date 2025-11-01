@@ -4,18 +4,10 @@ const Career = () => {
   return (
     <section
       id="career"
-      className="h-screen flex relative">
+      className="flex-1 flex bg-gray-300 min-h-[calc(100vh-75px)]">
 
-      <div className='flex flex-col gap-2'>
-        <h1 className="text-4xl font-bold [@media(max-width:600px)]:text-2xl">Work Experience</h1>
-        <div>
-          <span className='border border-dashed p-1 rounded'>2 years 8 months</span>
-        </div>
-      </div>
-
-      { /**  */}
-      <div>
-
+      <div className='border w-[80%]'>
+        career
       </div>
     </section>
   )

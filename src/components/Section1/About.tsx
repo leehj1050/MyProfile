@@ -1,12 +1,12 @@
 import React from 'react'
 import { TechStack } from './TechStack'
 
-const About = () => {
+const About = () => { // [@media(min-width:1235px)]:flex-row
 
   return (
     <section
       id="about"
-      className="h-screen flex items-center justify-center gap-[30px] flex-col [@media(min-width:1235px)]:flex-row border-b border-dashed"
+      className=" flex gap-[30px] flex-col min-h-[calc(100vh-75px)]"
     >
       <div className='flex flex-col'>
         <h1 className="text-4xl font-bold [@media(max-width:600px)]:text-2xl">안녕하세요.</h1>

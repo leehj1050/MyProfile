@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Jua } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header/Header";
 
 
 const jua = Jua({
@@ -24,7 +23,6 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${jua.className} antialiased flex flex-col`}>
-                <Header />
                 {children}
             </body>
         </html>
