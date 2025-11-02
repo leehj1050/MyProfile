@@ -10,6 +10,9 @@
   --spacing-1: 10px; /* p-1 */
   --spacing-1\.5: 15px; /* p-1.5  ← 점은 역슬래시로 escape */
   --spacing-2: 20px; /* p-2 */
+  --spacing-3: 30px; /* p-3 */
+  --spacing-4: 40px; /* p-4 */
+  --spacing-5: 50px; /* p-5 */
   --spacing-5\.5: 55px; /* p-5.5 */
 }
 
@@ -46,7 +49,6 @@ button {
   cursor: pointer;
 }
 
-
-main{
+section{
   padding: 2vw;
 }

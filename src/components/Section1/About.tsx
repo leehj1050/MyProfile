@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import { TechStack } from './TechStack'
 
-const About = () => { // [@media(min-width:1235px)]:flex-row
-
+const About = forwardRef<HTMLDivElement>((props, ref) => { // [@media(min-width:1235px)]:flex-row
   return (
     <section
       id="about"
-      className=" flex gap-[30px] flex-col min-h-[calc(100vh-75px)]"
+      ref={ref}
+      className=" flex gap-[30px] flex-col min-h-[calc(100vh-75px)] items-center justify-center"
     >
       <div className='flex flex-col'>
         <h1 className="text-4xl font-bold [@media(max-width:600px)]:text-2xl">안녕하세요.</h1>
@@ -61,9 +61,9 @@ const About = () => { // [@media(min-width:1235px)]:flex-row
       </div>
     </section>
   )
+})
 
-}
-
+About.displayName = "About"
 export default About
 
 
