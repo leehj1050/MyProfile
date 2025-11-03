@@ -1,4 +1,10 @@
 import React from 'react'
+import { Roboto } from "next/font/google";
+
+const roboto = Roboto({
+    subsets: ["latin"],
+    weight: "600",
+})
 
 const steps = [
     { key: 1, id: "About", label: "Introduce" },
@@ -9,7 +15,7 @@ const steps = [
 
 export default function Sidebar({ currentSection }: { currentSection: string }) {
     return (
-        <div className=' h-full w-full flex items-center justify-center'>
+        <div className={`${roboto.className} h-full w-full flex items-center justify-center`}>
             <ul className="flex flex-col gap-[5vw] relative  flex-1">
                 {steps.map((step, i) => (
                     <li key={step.key} className="flex items-center justify-center relative ">

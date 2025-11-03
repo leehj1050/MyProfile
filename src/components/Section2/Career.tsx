@@ -1,14 +1,42 @@
 import React, { forwardRef } from 'react'
+import { CAREER_CONFIG } from './config'
+
 
 const Career = forwardRef<HTMLDivElement>((props, ref) => {
   return (
     <section
       id="career"
       ref={ref}
-      className="flex-1 flex bg-gray-300 min-h-[calc(100vh-75px)]">
+      className="flex-1">
+      <div className='flex flex-col gap-2'>
+        {CAREER_CONFIG.map((career) => (
+          <div className=' p-1.5 flex flex-col gap-1 border border-gray-300 rounded-xl shadow-lg' key={career.id}>
 
-      <div className='border w-[80%]'>
-        career
+            <div className='flex justify-between'>
+              <p className='text-xl font-semibold'>{career.info.position}</p>
+              <p className='text-gray-500'>{career.info.start_working} - {career.info.end_working}</p>
+            </div>
+
+            <div className='font-semibold'>
+              <p>{career.company} (Full-Time)</p>
+            </div>
+
+            <ul className='list-disc pl-2'>
+              {career.experience.map((experience, key) => (
+                <li key={key} className='mb-[5px]'>{experience}</li>
+              ))}
+              { /** experience의 개수가 5개보다 작으면 빈칸 */}
+              {career.experience.length < 5 && <li className='list-none'>&nbsp;</li>}
+            </ul>
+
+
+            <div className='flex gap-1'>
+              {career.techstack.map((tech, key) => (
+                <span key={key} className='bg-gray-300 px-1 py-[5px] py-0.5 text-sm rounded-full'>{tech}</span>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   )

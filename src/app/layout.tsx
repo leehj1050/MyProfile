@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Jua } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import "./globals.css";
 
 
-const jua = Jua({
-    subsets: ["latin"],  // Jua는 라틴 + 한글 섹션이니까 latin 또는 “korean” 등 포함 가능한 경우도 있음
-    display: "swap",     // 폰트 렌더링 방식
-    weight: "400",       // Jua는 보통 Regular 하나만 있으니까 400
+const OpenSans = Open_Sans({
+    subsets: ["latin"],
+    display: "swap",
+    weight: ["400", "600"],
 });
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${jua.className} antialiased flex flex-col`}>
+            <body className={`${OpenSans.className} antialiased flex flex-col`}>
                 {children}
             </body>
         </html>
