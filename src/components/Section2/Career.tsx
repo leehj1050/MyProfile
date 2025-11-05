@@ -1,16 +1,24 @@
-import React, { forwardRef } from 'react'
+import React, { forwardRef, useState } from 'react'
 import { CAREER_CONFIG } from './config'
 
 
-const Career = forwardRef<HTMLDivElement>((props, ref) => {
+const Career = forwardRef<HTMLDivElement, { activePopup: () => void }>((props, ref) => {
+  const { activePopup } = props
+
   return (
     <section
       id="career"
       ref={ref}
-      className="flex-1">
+      className="flex-1 flex flex-col gap-5">
+
+      <h1 className="text-4xl font-bold text-center">Work Experience</h1>
+
       <div className='flex flex-col gap-2'>
         {CAREER_CONFIG.map((career) => (
-          <div className=' p-1.5 flex flex-col gap-1 border border-gray-300 rounded-xl shadow-lg' key={career.id}>
+          <div className='p-1.5 flex flex-col gap-1 border border-gray-300 rounded-xl shadow-lg hover:scale-101 duration-400 cursor-pointer'
+            key={career.id}
+            onClick={activePopup}
+          >
 
             <div className='flex justify-between'>
               <p className='text-xl font-semibold'>{career.info.position}</p>
@@ -38,6 +46,8 @@ const Career = forwardRef<HTMLDivElement>((props, ref) => {
           </div>
         ))}
       </div>
+
+
     </section>
   )
 })

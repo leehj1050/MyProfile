@@ -1,0 +1,46 @@
+/* 애니메이션 */
+@keyframes wave-in {
+  0% {
+    opacity: 0;
+    transform: translateZ(-80px) scale(0.8);
+  }
+  60% {
+    opacity: 1;
+    transform: translateZ(10px) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: translateZ(0) scale(1);
+  }
+}
+
+.animate_wave_in {
+  animation: wave-in 8s ease-in-out infinite;
+  transform-origin: center;
+  display: inline-block;
+}
+
+/* 부모에 원근감 부여 */
+.perspective_500 {
+  perspective: 500px;
+}
+
+
+/* 타이핑 효과 */
+@keyframes typing {
+  0% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 한 글자씩 등장하는 효과 */
+.type_char {
+  display: inline-block;
+  opacity: 0;
+  animation: typing 0.5s ease-out forwards;
+}

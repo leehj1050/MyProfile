@@ -2,6 +2,7 @@
 import Header from "@/components/Header/Header";
 import About from "@/components/Section1/About";
 import Career from "@/components/Section2/Career";
+import { CareerDetail } from "@/components/Section2/CareerDetail";
 import Projects from "@/components/Section3/Projects";
 import Contact from "@/components/Section4/Contact";
 import Sidebar from "@/components/Sidebar/Sidebar";
@@ -9,6 +10,7 @@ import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
   const [currentSection, setCurrentSection] = useState<string>("About");
+  const [isOpenDetail, setIsOpenDetail] = useState(false)
 
   // ✅ 각 섹션 ref 개별 선언
   const mainRef = useRef<HTMLDivElement>(null);
@@ -54,8 +56,14 @@ export default function Home() {
   }, []);
 
 
+  // click Event (career detail popup)
+  const handleClickCareerDetail = () => {
+    setIsOpenDetail(!isOpenDetail)
+  }
+
+
   return (
-    <div className="flex flex-col h-screen ">
+    <div className="flex flex-col h-screen relative">
       <Header />
 
 
@@ -68,12 +76,14 @@ export default function Home() {
 
         <main className="flex flex-col flex-5 overflow-y-auto scroll-smooth" ref={mainRef}>
           <About ref={aboutRef} />
-          <Career ref={careerRef} />
+          <Career activePopup={handleClickCareerDetail} ref={careerRef} />
           <Projects ref={projectsRef} />
           <Contact ref={contactRef} />
         </main>
       </div>
 
+      { /** detail popup */}
+      {isOpenDetail && <CareerDetail />}
 
     </div>
   )
