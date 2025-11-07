@@ -1,5 +1,6 @@
 import React from 'react'
 import { Roboto } from "next/font/google";
+import { useDarkMode } from '@/app/contextAPI/useDarkMode';
 
 const roboto = Roboto({
     subsets: ["latin"],
@@ -14,6 +15,8 @@ const steps = [
 ];
 
 export default function Sidebar({ currentSection }: { currentSection: string }) {
+    const { isDarkMode } = useDarkMode()
+
     return (
         <div className={`${roboto.className} h-full w-full flex items-center justify-center`}>
             <ul className="flex flex-col gap-[5vw] relative  flex-1">
@@ -21,7 +24,7 @@ export default function Sidebar({ currentSection }: { currentSection: string }) 
                     <li key={step.key} className="flex items-center justify-center relative ">
                         {/* 세로 라인 (맨 마지막 제외) */}
                         {i < steps.length - 1 && (
-                            <span className="absolute left-[50%] top-[50px] w-[2px] h-[calc(100%+16px)] bg-black hidden xl:inline"></span>
+                            <span className={`absolute left-[50%] top-[50px] w-[2px] h-[calc(100%+16px)] hidden xl:inline ${isDarkMode ? "bg-white" : "bg-black"}`}></span>
                         )}
 
 

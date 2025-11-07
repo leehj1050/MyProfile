@@ -1,23 +1,18 @@
 import React, { forwardRef, useState } from 'react'
 import { TechStack } from './TechStack'
-import { Jua } from "next/font/google";
 import styles from './About.module.css'
 import { INTRODUCE_INFO } from './config';
 
-const jua = Jua({
-  subsets: ["latin"],
-  weight: "400",
-});
 
 const About = forwardRef<HTMLDivElement>((props, ref) => {
   return (
     <section
       id="about"
       ref={ref}
-      className={`${jua.className} flex gap-5 flex-col min-h-[calc(100vh-75px)] items-center justify-center`}
+      className="flex gap-5 flex-col min-h-[calc(100vh-75px)] items-center justify-center"
     >
       <div className='flex flex-col gap-1'>
-        <h1 className="text-4xl  [@media(max-width:600px)]:text-2xl">안녕하세요.</h1>
+        <h1 className="text-4xl [@media(max-width:600px)]:text-2xl font-bold">안녕하세요.</h1>
         <h2 className='text-2xl [@media(max-width:600px)]:text-lg'>
           가치와 스스로의 해결방법을 탐구하는
           <br />

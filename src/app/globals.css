@@ -5,6 +5,11 @@
   --foreground: #171717;
 }
 
+[data-theme="dark"]{
+  --background: #171717;
+  --foreground: #ffffff;
+}
+
 @theme {
   --spacing: initial; /* 기본 스케일 비활성화 */
   --spacing-1: 10px; /* p-1 */

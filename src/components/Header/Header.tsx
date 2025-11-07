@@ -1,11 +1,9 @@
 import React from "react";
 import Link from "next/link";
-import { Roboto } from "next/font/google";
-
-const roboto = Roboto({
-  subsets: ["latin"],
-  weight: "600",
-})
+import { GoSun } from "react-icons/go";
+import { BsMoon } from "react-icons/bs";
+import { useDarkMode } from "@/app/contextAPI/useDarkMode";
+import { ImEarth } from "react-icons/im";
 
 const MenuConfig = [
   { title: "About", key: "menu_1", hrefId: "#about" },
@@ -15,11 +13,13 @@ const MenuConfig = [
 ];
 
 const Header = () => {
+  const { isDarkMode, toggleTheme } = useDarkMode()
+
   return (
-    <div className={`${roboto.className} p-2 px-[6vw] w-full shadow-md bg-white z-10 h-[75px]`}>
+    <div className={`p-2 px-[6vw] w-full shadow-md  z-10 h-[75px] ${isDarkMode ? "bg-black" : "bg-white"}`}>
       <header className="flex  items-center ">
         <div className="flex-1 text-lg font-semibold cursor-pointer">Hye Jin's Port Folio</div>
-        <nav className="flex-2">
+        <nav className="flex-3">
           <ul className="flex justify-between">
             {MenuConfig.map((menu) => (
               <li className="flex justify-end flex-1" key={menu.key}>
@@ -31,6 +31,15 @@ const Header = () => {
             ))}
           </ul>
         </nav>
+
+        <div className="flex-1 flex justify-end gap-2 text-2xl">
+          <button onClick={toggleTheme}>
+            {isDarkMode ? <GoSun /> : <BsMoon />}
+          </button>
+          <button>
+            <ImEarth />
+          </button>
+        </div>
       </header>
     </div>
   );
