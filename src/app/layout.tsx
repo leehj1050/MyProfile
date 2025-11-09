@@ -13,7 +13,13 @@ const poppins = Poppins({
 export const metadata: Metadata = {
     title: "HyeJin's Port Folio",
     description: "My Port Folio",
+    icons: {
+        icon: "/favicon.png", // public 폴더에 있는 경우
+        shortcut: "/favicon.png", // 과거 브라우저 호환용
+        apple: "/favifon.png" // iOS 홈화면용
+    },
 };
+
 
 export default function RootLayout({
     children,
