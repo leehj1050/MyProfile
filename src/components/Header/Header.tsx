@@ -16,16 +16,20 @@ const Header = () => {
   const { isDarkMode, toggleTheme } = useDarkMode()
 
   return (
-    <div className={`p-2 px-[6vw] w-full shadow-md  z-10 h-[75px] ${isDarkMode ? "bg-black" : "bg-white"}`}>
+    <div className={`p-2 px-[6vw] w-full shadow-md  z-10 h-[75px] ${isDarkMode ? "bg-black " : "bg-white"}`}>
       <header className="flex  items-center ">
-        <div className="flex-1 text-lg font-semibold cursor-pointer">Hye Jin's Port Folio</div>
+        <div className="flex-1 text-lg font-semibold cursor-pointer k">Hye Jin's Port Folio</div>
         <nav className="flex-3">
           <ul className="flex justify-between">
             {MenuConfig.map((menu) => (
               <li className="flex justify-end flex-1" key={menu.key}>
                 <Link href={menu.hrefId} className="group" >{/** 호버감지용 */}
-                  <span className=" text-[18px] font-[600] after:content-[''] after:block after:w-[0%] after:h-[2px] after:bg-[#0a0a0a] after:mt-[5px] after:transition-all after:duration-300
-                     group-hover:after:w-full">{menu.title}</span>
+                  <span
+                    className={`text-[18px] font-[600] after:content-[''] after:block after:w-[0%] after:h-[2px] after:mt-[5px] after:transition-all after:duration-300
+                     group-hover:after:w-full ${isDarkMode ? "after:bg-white" : "after:bg-[#0a0a0a]"}`}
+                  >
+                    {menu.title}
+                  </span>
                 </Link>
               </li>
             ))}

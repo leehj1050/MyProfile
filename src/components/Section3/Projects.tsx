@@ -2,10 +2,14 @@ import Image from 'next/image'
 import React, { forwardRef } from 'react'
 import { PROJECT_LIST } from './config'
 import Link from 'next/link';
+import { useDarkMode } from '@/app/contextAPI/useDarkMode';
 
-const Projects = forwardRef<HTMLDivElement>((props, ref) => {
+const Projects = forwardRef<HTMLDivElement, { popupClick: (projectDetail: any) => void }>((props, ref) => {
   const GRID_SIZE = 6; // 3x2
   const placeholderCount = GRID_SIZE - PROJECT_LIST.length;
+  const { popupClick } = props
+  const { isDarkMode } = useDarkMode()
+
 
   return (
     <section
@@ -17,9 +21,10 @@ const Projects = forwardRef<HTMLDivElement>((props, ref) => {
 
       <div className="gap-2 grid grid-cols-1 grid-rows-3 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
         {PROJECT_LIST.map((project) => (
-          <Link href={project.href} key={project.id}
-            className="border border-gray-200 shadow-md rounded-xl overflow-hidden hover:scale-101 duration-300"
-            target='_blank'>
+          <article key={project.id}
+            className={`border border-gray-200 rounded-xl overflow-hidden hover:scale-101 duration-300 cursor-pointer ${isDarkMode ? "shadow-[0_0_8px]" : "shadow-md"}`}
+            onClick={() => popupClick(project.detail)}
+          >
             <div className='relative h-[300px] '>
               <Image src={project.src} alt='gpt_project' fill sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw' />
             </div>
@@ -31,13 +36,13 @@ const Projects = forwardRef<HTMLDivElement>((props, ref) => {
                 </ul>
               ))}
             </div>
-          </Link>
+          </article>
         ))}
 
         {/* 빈 칸 (placeholders) */}
         {Array.from({ length: placeholderCount > 0 ? placeholderCount : 0 }).map(
           (_, i) => (
-            <article key={i} className="border border-gray-200 shadow-md rounded-xl overflow-hidden">
+            <article key={i} className={`border border-gray-200 rounded-xl overflow-hidden ${isDarkMode ? "shadow-[0_0_8px]" : "shadow-md"}`}>
               <div className='relative h-[300px] bg-black flex items-center justify-center'>
                 <p className='text-2xl text-white font-bold'>No Project</p>
               </div>

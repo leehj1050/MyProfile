@@ -1,10 +1,9 @@
-import React, { forwardRef, useState } from 'react'
+import React, { forwardRef } from 'react'
 import { CAREER_CONFIG } from './config'
 import { useDarkMode } from '@/app/contextAPI/useDarkMode'
 
 
-const Career = forwardRef<HTMLDivElement, { activePopup: () => void }>((props, ref) => {
-  const { activePopup } = props
+const Career = forwardRef<HTMLDivElement>((props, ref) => {
   const { isDarkMode } = useDarkMode()
 
   return (
@@ -17,9 +16,8 @@ const Career = forwardRef<HTMLDivElement, { activePopup: () => void }>((props, r
 
       <div className='flex flex-col gap-2'>
         {CAREER_CONFIG.map((career) => (
-          <div className={`p-1.5 flex flex-col gap-1 border border-gray-300 rounded-xl hover:scale-101 duration-400 cursor-pointer ${isDarkMode ? "shadow-[0_0_8px]" : "shadow-lg"}`}
+          <div className={`p-1.5 flex flex-col gap-1 border border-gray-300 rounded-xl hover:scale-101 duration-400 ${isDarkMode ? "shadow-[0_0_8px]" : "shadow-lg"}`}
             key={career.id}
-            onClick={activePopup}
           >
 
             <div className='flex justify-between'>
@@ -40,11 +38,15 @@ const Career = forwardRef<HTMLDivElement, { activePopup: () => void }>((props, r
             </ul>
 
 
-            {/* <div className='flex gap-1'>
+            <div className='flex gap-1'>
               {career.techstack.map((tech, key) => (
-                <span key={key} className='bg-gray-300 px-1 py-[5px] py-0.5 text-sm rounded-full'>{tech}</span>
+                <span key={key}
+                  className={` px-1 py-[5px] py-0.5 text-sm rounded-full ${isDarkMode ? "text-white bg-gray-600" : "text-black bg-gray-300"}`}
+                >
+                  {tech}
+                </span>
               ))}
-            </div> */}
+            </div>
           </div>
         ))}
       </div>

@@ -1,0 +1,14 @@
+ .arrow{
+    animation: moveLeftRight 2.5s ease-in-out infinite;
+    
+ }
+ 
+ @keyframes moveLeftRight {
+    0%, 100%{
+        transform: translateX(0)
+    }
+    50%{
+        transform: translateX(-8px)
+    }
+     
+}
