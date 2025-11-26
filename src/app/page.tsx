@@ -33,8 +33,12 @@ export default function Home() {
     if (!container) return;
 
     const handleScroll = () => {
-      const scrollCenter = container.scrollTop + container.clientHeight / 2;
-      let activeSection = "About";
+      const scrollTop = container.scrollTop;
+      const scrollHeight = container.scrollHeight;
+      const clientHeight = container.clientHeight;
+      const scrollCenter = scrollTop + clientHeight / 2;
+
+      let activeSection = "";
 
       sectionRefs.forEach(({ name, ref }) => {
         const el = ref.current;
@@ -47,6 +51,12 @@ export default function Home() {
           activeSection = name;
         }
       });
+
+      // ✅ 스크롤이 바닥에 닿았을 때 Contact 섹션 활성화
+      const isBottom = Math.ceil(scrollTop + clientHeight) >= scrollHeight;
+      if (isBottom) {
+        activeSection = "Contact";
+      }
 
       setCurrentSection(activeSection);
     };

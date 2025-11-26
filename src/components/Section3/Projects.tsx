@@ -19,7 +19,7 @@ const Projects = forwardRef<HTMLDivElement, { popupClick: (projectDetail: any) =
     >
       <h1 className="text-4xl font-bold text-center">Projects</h1>
 
-      <div className="gap-2 grid grid-cols-1 grid-rows-3 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
+      <div className="gap-2 grid grid-cols-1 grid-rows-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
         {PROJECT_LIST.map((project) => (
           <article key={project.id}
             className={`border border-gray-200 rounded-xl overflow-hidden hover:scale-101 duration-300 cursor-pointer ${isDarkMode ? "shadow-[0_0_8px]" : "shadow-md"}`}

@@ -15,8 +15,8 @@ export const PopupDetail = ({ onClickOutside, detailData }: PopupProps) => {
     const { summary, tech, project_href } = detailData
 
     return (
-        <div className='absolute top-0 bottom-0 left-0 right-0 z-99 w-full h-[100vh] flex bg-black/80 justify-center items-center' onClick={onClickOutside}>
-            <div className='rounded-lg border border-black w-[90%] text-white p-2 bg-gradient-to-b from-neutral-950 to-neutral-800 overflow-y-auto h-[60vh]'
+        <div className='absolute top-0 bottom-0 left-0 right-0 z-99 w-full h-[100vh] flex bg-black/90 justify-center items-center' onClick={onClickOutside}>
+            <div className='rounded-lg border border-black w-[90%] text-white p-2 bg-gradient-to-b from-neutral-950 to-neutral-800 overflow-y-auto h-[55vh] flex flex-col justify-between'
                 onClick={(e) => e.stopPropagation()} // 내부 클릭 시 이벤트 전파 막기
             >
                 <div className='flex justify-between mb-1.5'>
