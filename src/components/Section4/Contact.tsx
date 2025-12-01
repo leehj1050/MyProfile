@@ -1,12 +1,23 @@
-import React, { forwardRef } from 'react'
+import React, { forwardRef, SetStateAction } from 'react'
 import { CONTATC_INFO } from './config'
 import { useDarkMode } from '@/app/contextAPI/useDarkMode'
 
-const Contact = forwardRef<HTMLDivElement>((props, ref) => {
-  const { isDarkMode } = useDarkMode()
+interface PropsType {
+  isOpenEmail: boolean;
+  setIsOpenEmail: React.Dispatch<SetStateAction<boolean>>
+}
 
-  const handleClickButton = (href: string) => {
-    window.open(href, "_blank");
+const Contact = forwardRef<HTMLDivElement, { EmailPopup: PropsType }>((props, ref) => {
+  const { isDarkMode } = useDarkMode()
+  const { isOpenEmail, setIsOpenEmail } = props.EmailPopup
+
+  const handleClickButton = (id: string, href: string) => {
+    if (id === "email") {
+      setIsOpenEmail(true)
+    } else {
+      window.open(href, "_blank");
+
+    }
   }
 
   return (
@@ -20,7 +31,7 @@ const Contact = forwardRef<HTMLDivElement>((props, ref) => {
       <div className="flex gap-2">
         {CONTATC_INFO.map((item, key) => (
           <div key={key} className={`p-1 flex-1 flex gap-1 border border-2 border-gray-300 rounded-lg cursor-pointer hover:scale-102 duration-300 items-center ${isDarkMode ? "shadow-[0_0_8px]" : "shadow-md"}`}
-            onClick={() => handleClickButton(item.href)}
+            onClick={() => handleClickButton(item.id, item.href)}
           >
             <div className=' text-3xl'>
               <span >{item.icon}</span>

@@ -5,12 +5,14 @@ import Career from "@/components/Section2/Career";
 import { PopupDetail } from "@/components/Section3/popup";
 import Projects from "@/components/Section3/Projects";
 import Contact from "@/components/Section4/Contact";
+import MailPopup from "@/components/Section4/mailPopup";
 import Sidebar from "@/components/Sidebar/Sidebar";
 import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
   const [currentSection, setCurrentSection] = useState<string>("About");
   const [isOpenDetail, setIsOpenDetail] = useState(false)
+  const [isOpenEmail, setIsOpenEmail] = useState(false)
   const [selectedProject, setSelectedProject] = useState<any | null>(null);
 
   // ✅ 각 섹션 ref 개별 선언
@@ -78,6 +80,8 @@ export default function Home() {
   const closePopupClick = () => {
     setIsOpenDetail(false);
     setSelectedProject(null);
+
+    setIsOpenEmail(false)
   };
 
 
@@ -97,12 +101,13 @@ export default function Home() {
           <About ref={aboutRef} />
           <Career ref={careerRef} />
           <Projects popupClick={openPopupClick} ref={projectsRef} />
-          <Contact ref={contactRef} />
+          <Contact EmailPopup={{ isOpenEmail, setIsOpenEmail }} ref={contactRef} />
         </main>
       </div>
 
-      { /** detail popup */}
+      { /** detail popup & Email popup*/}
       {isOpenDetail && <PopupDetail onClickOutside={closePopupClick} detailData={selectedProject} />}
+      {isOpenEmail && <MailPopup onClickOutside={closePopupClick} />}
 
     </div>
   )
