@@ -28,7 +28,7 @@ export const POST = async (req: NextRequest) => {
       from: user,
       replyTo:body.email,
       to: user,
-      subject: `안녕하세요. ${body.name}입니다.`,
+      subject: `[Contact Me] 안녕하세요. ${body.name}입니다.`,
       html: `
       <h2>보내는이: ${body.name}</h2>
       <b>내용: ${body.content}</b>

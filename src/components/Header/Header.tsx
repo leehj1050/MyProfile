@@ -63,8 +63,18 @@ const Header = () => {
           </button>
 
           {isOpenMenu &&
-            <div className="z-10 bg-white absolute inset-[0] top-[100%] h-[100vh]">
-              메뉴
+            <div className="z-10 bg-white absolute inset-[0] top-[100%] min-h-[calc(100vh-70px)]">
+              <ul className="h-full flex flex-col text-[#171717] justify-center items-center gap-5">
+                {MenuConfig.map((menu) => (
+                  <li key={menu.key}>
+                    <Link href={menu.hrefId} onClick={() => setIsOpenMenu(false)}>
+                      <span className="text-[18px] font-[600] hover:text-gray-500">
+                        {menu.title}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           }
         </div>

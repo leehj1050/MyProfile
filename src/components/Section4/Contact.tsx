@@ -24,11 +24,11 @@ const Contact = forwardRef<HTMLDivElement, { EmailPopup: PropsType }>((props, re
     <section
       id="contact"
       ref={ref}
-      className={`flex flex-col gap-5 flex-1 mt-5 justify-between ${isDarkMode ? "" : "bg-gray-200"}`}
+      className={`flex flex-col gap-5 flex-1 mt-5 justify-between ${isDarkMode ? "" : "bg-gray-50"}`}
     >
       <h1 className="text-4xl font-bold text-center">Contact Me</h1>
 
-      <div className="flex gap-2">
+      <div className="flex flex-col gap-2 lg:flex-row">
         {CONTATC_INFO.map((item, key) => (
           <div key={key} className={`p-1 flex-1 flex gap-1 border border-2 border-gray-300 rounded-lg cursor-pointer hover:scale-102 duration-300 items-center ${isDarkMode ? "shadow-[0_0_8px]" : "shadow-md"}`}
             onClick={() => handleClickButton(item.id, item.href)}

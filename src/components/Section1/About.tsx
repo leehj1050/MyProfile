@@ -12,16 +12,16 @@ const About = forwardRef<HTMLDivElement>((props, ref) => {
       className="flex gap-5 flex-col min-h-[calc(100vh-75px)] items-center justify-center"
     >
       <div className='flex flex-col gap-1'>
-        <h1 className="text-4xl [@media(max-width:600px)]:text-2xl font-bold">안녕하세요.</h1>
-        <h2 className='text-2xl [@media(max-width:600px)]:text-lg'>
+        <h1 className="text-2xl sm:text-4xl md:text-4xl font-bold">안녕하세요.</h1>
+        <h2 className='text-base sm:text-xl'>
           가치와 스스로의 해결방법을 탐구하는
           <br />
           프론트엔드 개발자 <strong>'이혜진'</strong> 입니다.
         </h2>
 
         <div className='flex items-center gap-1'>
-          <p className='shrink-0 text-xl font-bold'>Tech Stack</p>
-          <p>|</p>
+          <p className='hidden shrink-0 font-bold text-md md:text-xl md:block'>Tech Stack</p>
+          <p className='hidden md:block'>|</p>
           <TechStack />
         </div>
       </div>
@@ -31,11 +31,11 @@ const About = forwardRef<HTMLDivElement>((props, ref) => {
           <div key={info.id}>
             <div className='flex gap-1'>
               {info.title.map((titleText, titleIndex) => (
-                <h3 className={`text-xl font-bold`} key={titleIndex}>
+                <h3 className="text-sm md:text-xl font-bold" key={titleIndex}>
                   {titleText.focusText.split("").map((ch, i) => (
                     <span
                       key={i}
-                      className={`text-2xl ${styles.type_char} `}
+                      className={`text-xl md:text-2xl ${styles.type_char} `}
                       style={{
                         color: titleText.focusColor,
                         animationDelay: `${infoIndex * 0.8 + titleIndex * 0.3 + i * 0.08}s`,
@@ -48,7 +48,7 @@ const About = forwardRef<HTMLDivElement>((props, ref) => {
                 </h3>
               ))}
             </div>
-            <p>- {info.desc}</p>
+            <p className='text-sm md:text-base'>- {info.desc}</p>
           </div>
         ))}
       </div>

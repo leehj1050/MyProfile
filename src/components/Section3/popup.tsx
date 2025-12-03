@@ -20,12 +20,12 @@ export const PopupDetail = ({ onClickOutside, detailData }: PopupProps) => {
                 onClick={(e) => e.stopPropagation()} // 내부 클릭 시 이벤트 전파 막기
             >
                 <div className='flex justify-between mb-1.5'>
-                    <h3 className='text-xl font-semibold'>프로젝트 설명</h3>
+                    <h3 className='text-lg md:text-xl font-semibold'>프로젝트 설명</h3>
                     <button className='text-xl w-[30px] font-semibold hover:text-gray-400' onClick={onClickOutside}>X</button>
                 </div>
 
 
-                <ul className='list-disc pl-3 flex flex-col gap-1'>
+                <ul className='list-disc pl-3 flex flex-col gap-1 text-sm md:text-base'>
                     {summary.map((item, summaryKey) => (
                         <li key={summaryKey}>
                             <strong>{item.strong}</strong>
@@ -34,8 +34,8 @@ export const PopupDetail = ({ onClickOutside, detailData }: PopupProps) => {
                     ))}
                 </ul>
 
-                <h3 className='text-xl font-semibold my-1.5'>사용기술</h3>
-                <ul className='flex gap-2.5 text-2xl'>
+                <h3 className='text-lg md:text-xl font-semibold my-1.5'>사용기술</h3>
+                <ul className='flex gap-2.5 text-md md:text-2xl'>
                     {tech.map((item, techKey) => (
                         <li key={techKey} className={`${item.color} flex items-center gap-1`}>
                             {item.icon} {item.tech_stack}
@@ -44,7 +44,7 @@ export const PopupDetail = ({ onClickOutside, detailData }: PopupProps) => {
                 </ul>
 
 
-                <h3 className='text-xl font-semibold my-1.5'>프로젝트 Link</h3>
+                <h3 className='text-lg md:text-xl font-semibold my-1.5'>프로젝트 Link</h3>
                 <ul className='flex gap-2.5 text-xl '>
                     <li className="flex items-center gap-1 relative  ">
                         <Link className='text-gray-500 hover:text-white' href={project_href} target='_blank'>View Project</Link>
