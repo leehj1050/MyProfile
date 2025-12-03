@@ -14,11 +14,12 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const [theme, setTheme] = useState<Theme>("light");
 
+
   // 첫 로드시 localStorage 또는 시스템 설정 불러오기
   useEffect(() => {
     const localTheme = (localStorage.getItem("theme") as Theme) || "light";
     setTheme(localTheme);
-    document.body.dataset.theme = localTheme;
+    document.documentElement.dataset.theme = localTheme
   }, []);
 
   // 토글 함수
@@ -26,7 +27,7 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
     localStorage.setItem("theme", newTheme);
-    document.body.dataset.theme = newTheme;
+    document.documentElement.dataset.theme = newTheme
   };
 
   return (

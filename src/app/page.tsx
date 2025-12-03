@@ -89,7 +89,6 @@ export default function Home() {
     <div className="flex flex-col h-screen relative">
       <Header />
 
-
       {/* 본문 (남은 공간 전부 차지) */}
       <div className="flex flex-1 overflow-y-auto gap-2">
         {/* Sidebar */}

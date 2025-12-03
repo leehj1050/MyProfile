@@ -24,7 +24,7 @@ export default function Sidebar({ currentSection }: { currentSection: string }) 
                     <li key={step.key} className="flex items-center justify-center relative ">
                         {/* 세로 라인 (맨 마지막 제외) */}
                         {i < steps.length - 1 && (
-                            <span className={`absolute left-[50%] top-[50px] w-[2px] h-[calc(100%+16px)] hidden xl:inline ${isDarkMode ? "bg-white" : "bg-black"}`}></span>
+                            <span className={`absolute left-[50%] top-[50px] w-[2px] h-[calc(100%+16px)] hidden aside-line xl:inline `}></span>
                         )}
 
 
