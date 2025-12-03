@@ -60,7 +60,7 @@ const MailPopup = ({ onClickOutside }: { onClickOutside: () => void }) => {
                     email,
                     content
                 }
-                const response = await fetch("/api/contact", {
+                const response = await fetch("/api/contacts", {
                     method: "POST",
                     body: JSON.stringify(formatData)
                 })
@@ -72,6 +72,10 @@ const MailPopup = ({ onClickOutside }: { onClickOutside: () => void }) => {
 
             } catch (error) {
                 console.error("메일전송 error ", error)
+                alert("메일전송에 실패했습니다.")
+                onClickOutside()
+            } finally {
+                setIsLoading(false)
             }
 
         }
@@ -90,7 +94,7 @@ const MailPopup = ({ onClickOutside }: { onClickOutside: () => void }) => {
                         <form className=' max-w-3xl w-full flex flex-col gap-4' onSubmit={(e) => handleSendMessage(e)} onClick={(e) => e.stopPropagation()}>
                             <div className='flex gap-2'>
                                 <div className='flex-1'>
-                                    <div className='flex flex-col gap-1 relative group/name '>
+                                    <div className='flex flex-col gap-1 relative group/name text-white '>
                                         <label htmlFor='name' className='font-bold'>성명</label>
                                         <input id='name' placeholder='성명을 입력하세요.' className='bg-zinc-800 focus-visible:outline-none rounded-md placeholder-text-neutral-600 p-1' onChange={(e) => handleChangeText(e)} />
                                         <span className="group-hover/name:opacity-100 block transition duration-500 opacity-0 absolute h-px w-full -bottom-px inset-x-0 bg-gradient-to-r from-transparent via-cyan-500 to-transparent"></span>
@@ -100,7 +104,7 @@ const MailPopup = ({ onClickOutside }: { onClickOutside: () => void }) => {
                                 </div>
 
                                 <div className='flex-1'>
-                                    <div className='flex flex-col gap-1 relative group/email'>
+                                    <div className='flex flex-col gap-1 relative group/email text-white'>
                                         <label htmlFor='email' className='font-bold'>이메일</label>
                                         <input id='email' placeholder='이메일을 입력하세요.' className='bg-zinc-800 focus-visible:outline-none rounded-md placeholder-text-neutral-600 p-1' onChange={(e) => handleChangeText(e)} />
                                         <span className="group-hover/email:opacity-100 block transition duration-500 opacity-0 absolute h-px w-full -bottom-px inset-x-0 bg-gradient-to-r from-transparent via-cyan-500 to-transparent"></span>
@@ -111,7 +115,7 @@ const MailPopup = ({ onClickOutside }: { onClickOutside: () => void }) => {
                             </div>
 
                             <div>
-                                <div className='flex flex-col gap-1 relative group/content'>
+                                <div className='flex flex-col gap-1 relative group/content text-white'>
                                     <label htmlFor='content' className='font-bold'>메시지</label>
                                     <textarea id='content' placeholder='메시지를 입력하세요.' rows={4} className='bg-zinc-800 focus-visible:outline-none rounded-md placeholder-text-neutral-600 resize-none p-1' onChange={(e) => handleChangeText(e)} />
                                     <span className="group-hover/content:opacity-100 block transition duration-500 opacity-0 absolute h-px w-full -bottom-px inset-x-0 bg-gradient-to-r from-transparent via-cyan-500 to-transparent"></span>
@@ -120,7 +124,7 @@ const MailPopup = ({ onClickOutside }: { onClickOutside: () => void }) => {
                                 <span className='text-red-500 text-xs'>{contentErrorMsg ? contentErrorMsg : <>&nbsp;</>}</span>
                             </div>
 
-                            <div className='bg-zinc-800 rounded-md font-semibold text-center group/btn'>
+                            <div className='bg-zinc-800 rounded-md font-semibold text-center group/btn text-white'>
                                 <button className='w-full h-full p-1 relative'>
                                     메시지 보내기 →
                                     <span className="group-hover/btn:opacity-100 block transition duration-500 opacity-0 absolute h-px w-full -bottom-px inset-x-0 bg-gradient-to-r from-transparent via-cyan-500 to-transparent"></span>
