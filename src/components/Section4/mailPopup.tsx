@@ -87,9 +87,9 @@ const MailPopup = ({ onClickOutside }: { onClickOutside: () => void }) => {
             if (isLoading) return
             onClickOutside()
         }}>
-            <h3 className='text-2xl font-semibold'>Get in touch</h3>
+            <h3 className='text-2xl font-semibold text-white'>Get in touch</h3>
             {
-                isLoading ? "메일 전송중..."
+                isLoading ? <p className='text-white'>메일 전송중...</p>
                     : (
                         <form className=' max-w-3xl w-full flex flex-col gap-4' onSubmit={(e) => handleSendMessage(e)} onClick={(e) => e.stopPropagation()}>
                             <div className='flex gap-2'>
