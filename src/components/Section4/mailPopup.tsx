@@ -60,7 +60,7 @@ const MailPopup = ({ onClickOutside }: { onClickOutside: () => void }) => {
                     email,
                     content
                 }
-                const response = await fetch("/api/contacts", {
+                const response = await fetch("/api/contact", {
                     method: "POST",
                     body: JSON.stringify(formatData)
                 })
