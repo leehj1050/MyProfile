@@ -22,5 +22,49 @@ export const PROJECT_LIST = [
             project_href: "https://gpt20q.netlify.app/",
         }
     },
+    {
+        id: 2,
+        src: "/projectsImg/MindMateAI.png",
+        project_name: "대화형 AI 정신건강케어 서비스",
+        desc: ["GPT API를 활용한 대화형 정신건강케어 서비스", "사용자의 심리상태 및 기분 등을 입력하면 고민을 들어주고 방향을 제시해주는 마인드컨트롤 서비스"],
+        detail: {
+            summary: [
+                {
+                    strong: "Next.js 기반 AI 서비스 개발",
+                    desc: "– Next.js를 기반으로 프로젝트를 구성하고, 서버 컴포넌트에서 OpenAI API를 호출하여 사용자 상황에 맞는 정신건강 케어 대화를 생성하도록 설계했습니다."
+                },
+                {
+                    strong: "대화형 사용자 입력 처리",
+                    desc: "– 사용자의 현재 감정 상태, 고민 내용, 대화 흐름을 입력으로 받아 프롬프트에 반영하고, 이전 대화 맥락을 유지한 채 GPT와 자연스러운 상담형 대화를 이어갈 수 있도록 구현했습니다."
+                },
+                {
+                    strong: "프롬프트 설계 및 응답 제어",
+                    desc: "– AI가 과도하게 길거나 일반적인 답변을 생성하지 않도록, ‘공감 → 질문 → 간단한 정리’ 구조의 프롬프트를 설계하여 가독성과 실제 상담에 가까운 응답을 유도했습니다."
+                },
+                {
+                    strong: "입력 유효성 및 UX 개선",
+                    desc: "– 사용자가 메시지를 입력하지 않았거나 공백만 입력한 경우 전송을 제한하고, 잘못된 인터랙션을 방지하여 안정적인 대화 흐름을 유지하도록 처리했습니다."
+                },
+                {
+                    strong: "SPA 기반 채팅 UI 구현",
+                    desc: "– 페이지 이동 없이 채팅 인터페이스 내에서 메시지가 순차적으로 렌더링되도록 구성하여, 실제 메신저와 유사한 몰입감 있는 상담 경험을 제공했습니다."
+                },
+                {
+                    strong: "로딩 및 응답 상태 시각화",
+                    desc: "– AI 응답 대기 중에는 Pending 메시지 및 로딩 UI를 노출하여, 사용자가 시스템 상태를 인지할 수 있도록 UX를 개선했습니다."
+                },
+                {
+                    strong: "프로젝트 기획 의도",
+                    desc: "– 정신건강 관리에 대한 접근 장벽을 낮추고, 언제든지 가볍게 감정을 털어놓을 수 있는 ‘AI 기반 마인드 메이트’를 만들고자 프로젝트를 기획했습니다. 단순한 위로 문구가 아닌, 공감과 질문을 통해 사용자가 자신의 감정을 정리할 수 있도록 돕는 대화형 케어 서비스 구현을 목표로 했습니다."
+                }
+            ]
+            ,
+            tech: [
+                { tech_stack: "Next.js", icon: <RiNextjsFill />, color: "text-white-600" },
+                { tech_stack: "Tailwind CSS", icon: <RiTailwindCssFill />, color: "text-teal-600" }
+            ],
+            project_href: "https://prodmindmateai.netlify.app/",
+        }
+    },
 
 ]
