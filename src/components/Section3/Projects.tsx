@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import React, { forwardRef } from 'react'
 import { PROJECT_LIST } from './config'
-import Link from 'next/link';
 import { useDarkMode } from '@/app/contextAPI/useDarkMode';
 
 const Projects = forwardRef<HTMLDivElement, { popupClick: (projectDetail: any) => void }>((props, ref) => {

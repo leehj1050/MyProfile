@@ -1,4 +1,4 @@
-import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
+import { RiBearSmileLine, RiNextjsFill, RiReactjsFill, RiTailwindCssFill } from "react-icons/ri";
 
 export const PROJECT_LIST = [
     {
@@ -66,5 +66,53 @@ export const PROJECT_LIST = [
             project_href: "https://prodmindmateai.netlify.app/",
         }
     },
+    {
+        id: 3,
+        src: "/projectsImg/WeatherApp.png",
+        project_name: "위치 기반 날씨 정보 서비스",
+        desc: [
+            "사용자 위치 및 검색 지역 기반의 실시간 날씨 정보 제공 웹 애플리케이션",
+            "기상청 API를 활용하여 현재 날씨, 하늘 상태, 기온 정보를 직관적인 UI로 시각화한 서비스"
+        ],
+        detail: {
+            summary: [
+                {
+                    strong: "Next.js 기반 날씨 서비스 개발",
+                    desc: "– Next.js를 기반으로 프로젝트를 구성하고, 서버/클라이언트 컴포넌트를 분리하여 날씨 데이터 요청과 UI 렌더링을 효율적으로 처리했습니다."
+                },
+                {
+                    strong: "위치 기반 날씨 데이터 연동",
+                    desc: "– 브라우저 Geolocation API를 활용해 사용자의 현재 위경도를 수집하고, 이를 기상청 격자 좌표(nx, ny) 데이터와 매칭하여 정확한 지역 날씨 정보를 조회하도록 구현했습니다."
+                },
+                {
+                    strong: "지역 검색 및 필터링 로직 구현",
+                    desc: "– 시·군·구·동 단위의 지역 데이터를 JSON 형태로 가공하여 관리하고, 사용자 입력에 따라 조건부 필터링을 수행해 원하는 지역의 날씨를 빠르게 검색할 수 있도록 처리했습니다."
+                },
+                {
+                    strong: "날씨 상태별 UI 및 스타일 분기",
+                    desc: "– 맑음, 구름 많음, 흐림 등 하늘 상태 코드(SKY)에 따라 배경 그라데이션, 아이콘, 카드 스타일이 동적으로 변경되도록 구성하여 시각적 직관성을 강화했습니다."
+                },
+                {
+                    strong: "UX 중심의 로딩 및 예외 처리",
+                    desc: "– 날씨 API 응답 대기 중에는 로딩 UI를 노출하고, 데이터가 없는 경우나 오류 발생 시에도 화면이 깨지지 않도록 fallback UI 및 방어 로직을 적용했습니다."
+                },
+                {
+                    strong: "모바일 환경 및 크로스 브라우징 고려",
+                    desc: "– 모바일 Safari 환경에서의 vh 단위 이슈, 스크롤 문제 등을 고려해 레이아웃을 설계하고, 주요 브라우저에서 동일한 사용자 경험을 제공할 수 있도록 대응했습니다."
+                },
+                {
+                    strong: "프로젝트 기획 의도",
+                    desc: "– 복잡한 기상 정보 나열이 아닌, 사용자가 ‘지금 이 순간의 날씨’를 직관적으로 이해할 수 있는 UI를 목표로 기획했습니다. 위치 기반 자동 조회와 간단한 검색 기능을 통해 일상에서 빠르게 활용할 수 있는 날씨 앱을 구현하고자 했습니다."
+                }
+            ],
+            tech: [
+                { tech_stack: "Next.js", icon: <RiNextjsFill />, color: "text-white-600" },
+                { tech_stack: "Tailwind CSS", icon: <RiTailwindCssFill />, color: "text-teal-600" },
+                { tech_stack: "Tanstack-query", icon: <RiReactjsFill />, color: "text-blue-400" },
+                { tech_stack: "Zustand", icon: <RiBearSmileLine />, color: "text-[#8B4513]" },
+            ],
+            project_href: "https://devweatherappgo.netlify.app"
+        }
+    }
 
 ]
