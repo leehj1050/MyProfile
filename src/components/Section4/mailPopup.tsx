@@ -83,7 +83,7 @@ const MailPopup = ({ onClickOutside }: { onClickOutside: () => void }) => {
     }
 
     return (
-        <div className='absolute inset-[0] z-99 w-full h-[100vh] flex flex-col gap-5 bg-black/90 justify-center items-center ' onClick={() => {
+        <div className='absolute inset-[0] z-99 w-full h-[100vh] flex flex-col gap-5 bg-black/90 justify-center items-center' onClick={() => {
             if (isLoading) return
             onClickOutside()
         }}>
@@ -91,8 +91,8 @@ const MailPopup = ({ onClickOutside }: { onClickOutside: () => void }) => {
             {
                 isLoading ? <p className='text-white'>메일 전송중...</p>
                     : (
-                        <form className=' max-w-3xl w-full flex flex-col gap-4' onSubmit={(e) => handleSendMessage(e)} onClick={(e) => e.stopPropagation()}>
-                            <div className='flex gap-2'>
+                        <form className='max-w-3xl w-full flex flex-col gap-4' onSubmit={(e) => handleSendMessage(e)} onClick={(e) => e.stopPropagation()}>
+                            <div className='flex gap-2 flex-col md:flex-row'>
                                 <div className='flex-1'>
                                     <div className='flex flex-col gap-1 relative group/name text-white '>
                                         <label htmlFor='name' className='font-bold'>성명</label>

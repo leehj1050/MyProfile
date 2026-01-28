@@ -1,4 +1,4 @@
-import { RiBearSmileLine, RiNextjsFill, RiReactjsFill, RiTailwindCssFill } from "react-icons/ri";
+import { RiBearSmileLine, RiCloudLine, RiNextjsFill, RiReactjsFill, RiRobot2Line, RiTailwindCssFill } from "react-icons/ri";
 
 export const PROJECT_LIST = [
     {
@@ -112,6 +112,55 @@ export const PROJECT_LIST = [
                 { tech_stack: "Zustand", icon: <RiBearSmileLine />, color: "text-[#8B4513]" },
             ],
             project_href: "https://devweatherappgo.netlify.app"
+        }
+    },
+    {
+        id: 4,
+        src: "/projectsImg/AiFaceReading.png",
+        project_name: "AI 관상 분석 웹 서비스",
+        desc: [
+            "사용자가 업로드한 얼굴 이미지를 기반으로 관상 요소를 분석하고 해석 결과를 제공하는 AI 관상 웹 서비스",
+            "얼굴 유효성 검증부터 AI 분석 결과 시각화까지 하나의 흐름으로 구성된 사용자 중심 분석 서비스"
+        ],
+        detail: {
+            summary: [
+                {
+                    strong: "AI 관상 분석 서비스 기획 및 구현",
+                    desc: "– 사용자가 얼굴 이미지를 업로드하면 관상 분석 결과를 단계적으로 제공하는 웹 서비스를 기획하고 구현했습니다. 분석 전 검증 단계와 결과 표현 단계를 명확히 분리하여 사용자 신뢰도를 높였습니다."
+                },
+                {
+                    strong: "얼굴 이미지 검증 로직 설계",
+                    desc: "– AI 분석 요청 전 단계에서 얼굴 존재 여부, 다중 얼굴 여부, 이미지 크기 제한 등을 사전 검증하여 불필요한 API 호출을 방지하고 안정적인 분석 흐름을 구성했습니다."
+                },
+                {
+                    strong: "OpenAI Vision API 연동",
+                    desc: "– 얼굴 이미지 데이터를 Base64 형태로 변환하여 OpenAI Vision 모델에 전달하고, 관상 요소(얼굴형, 이마, 눈, 코 등)에 대한 텍스트 분석 결과를 구조화된 데이터로 수신하도록 구현했습니다."
+                },
+                {
+                    strong: "단계별 UX 흐름 및 상태 관리",
+                    desc: "– 사진 업로드 → 얼굴 검증 → AI 분석 → 결과 노출까지의 흐름을 상태 머신 개념으로 설계하고, 각 단계별 UI 상태(로딩, 에러, 완료)를 명확히 구분해 사용자 혼란을 최소화했습니다."
+                },
+                {
+                    strong: "분석 결과 UI 컴포넌트화",
+                    desc: "– 관상 항목별 결과를 카드 단위 컴포넌트로 분리하여 재사용성을 높였으며, 데이터 구조 변화에도 유연하게 대응할 수 있도록 렌더링 로직을 구성했습니다."
+                },
+                {
+                    strong: "모바일 환경 및 인앱 브라우저 대응",
+                    desc: "– 모바일 Safari 및 토스 인앱(WebView) 환경에서의 파일 업로드, HTTPS 요구사항, 레이아웃 이슈 등을 고려하여 서비스가 동일하게 동작하도록 대응했습니다."
+                },
+                {
+                    strong: "프로젝트 기획 의도",
+                    desc: "– 단순한 재미 요소를 넘어, 사용자가 자신의 얼굴 특징을 하나의 이야기로 이해할 수 있도록 ‘단계적 분석 경험’을 제공하는 것을 목표로 기획했습니다. 기술적으로는 이미지 처리, 비동기 흐름 제어, UX 설계를 함께 고민한 프로젝트입니다."
+                }
+            ],
+            tech: [
+                { tech_stack: "Next.js", icon: <RiNextjsFill />, color: "text-white-600" },
+                { tech_stack: "Tailwind CSS", icon: <RiTailwindCssFill />, color: "text-teal-600" },
+                { tech_stack: "TanStack Query", icon: <RiReactjsFill />, color: "text-blue-400" },
+                { tech_stack: "Zustand", icon: <RiBearSmileLine />, color: "text-[#8B4513]" },
+                { tech_stack: "OpenAI API", icon: <RiRobot2Line />, color: "text-purple-400" },
+            ],
+            project_href: "https://ai-facereading.shop"
         }
     }
 

@@ -35,9 +35,9 @@ export const PopupDetail = ({ onClickOutside, detailData }: PopupProps) => {
                 </ul>
 
                 <h3 className='text-lg md:text-xl font-semibold my-1.5'>사용기술</h3>
-                <ul className='flex gap-2.5 text-md md:text-2xl'>
+                <ul className='flex gap-2 text-md md:text-2xl'>
                     {tech.map((item, techKey) => (
-                        <li key={techKey} className={`${item.color} flex items-center gap-1`}>
+                        <li key={techKey} className={`${item.color} flex items-center gap-1 text-sm md:text-lg shrink-0`}>
                             {item.icon} {item.tech_stack}
                         </li>
                     ))}
