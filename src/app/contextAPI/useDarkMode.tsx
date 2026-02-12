@@ -12,12 +12,12 @@ type ThemeContextType = {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  const [theme, setTheme] = useState<Theme>("light");
+  const [theme, setTheme] = useState<Theme>("dark");
 
 
   // 첫 로드시 localStorage 또는 시스템 설정 불러오기
   useEffect(() => {
-    const localTheme = (localStorage.getItem("theme") as Theme) || "light";
+    const localTheme = (localStorage.getItem("theme") as Theme) || "dark";
     setTheme(localTheme);
     document.documentElement.dataset.theme = localTheme
   }, []);
