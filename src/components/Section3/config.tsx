@@ -160,7 +160,7 @@ export const PROJECT_LIST = [
                 { tech_stack: "Zustand", icon: <RiBearSmileLine />, color: "text-[#8B4513]" },
                 { tech_stack: "OpenAI API", icon: <RiRobot2Line />, color: "text-purple-400" },
             ],
-            project_href: "https://ai-facereading.shop"
+            project_href: "https://ai-face-reading.netlify.app"
         }
     }
 
